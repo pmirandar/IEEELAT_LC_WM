@@ -1,5 +1,7 @@
 # A Low-Cost IoT System Development for Real-Time Residential Water Monitoring
 
+# Andrea M. Fern´andez-Saldaña, Alejandro Monroy-Avelino, Pedro Miranda-Romagnoli and Roberto Noriega-Papaqui
+
 Abstract— Water, as a natural resource, faces increasing pres-
 sure globally due to climate change, urbanization, and poor
 management, highlighting the need for accessible technological
