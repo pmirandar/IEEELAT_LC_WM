@@ -1,3 +1,4 @@
+
 # A Low-Cost IoT System Development for Real-Time Residential Water Monitoring
 
 ### <span style="font-size:10px"> Andrea M. Fernández-Saldaña, Alejandro Monroy-Avelino, Pedro Miranda-Romagnoli and Roberto Noriega-Papaqui
@@ -16,3 +17,5 @@ a user interface was developed to enable real-time data visual-
 ization. The experimental results demonstrate the viability of the
 proposed solution as a scalable, low-cost alternative for smart
 water monitoring in urban environments.
+
+<img width="1328" height="531" alt="v-abstract" src="https://github.com/user-attachments/assets/e9292bb0-5c3a-408a-9e19-3bb900858f4b" />
