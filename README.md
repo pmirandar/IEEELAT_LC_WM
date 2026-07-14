@@ -5,6 +5,8 @@
 
 ---
 
+**Affiliations: Universidad Autónoma del Estado de Hidalgo** [UAEH](https://www.uaeh.edu.mx/)
+
 Abstract— Water, as a natural resource, faces increasing pres-
 sure globally due to climate change, urbanization, and poor
 management, highlighting the need for accessible technological
