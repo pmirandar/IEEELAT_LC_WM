@@ -38,3 +38,15 @@ The system provides:
 * Local visualization using a 20×4 LCD.
 * Automatic daily consumption reset.
 * Off-line operation when internet connectivity is unavailable.
+
+  ## Software dependecies
+
+  Required Arduino libraries:
+
+    * Blynk
+    * BlynkEdgent
+    * LiquidCrystal_I2C
+    * TimeLib
+    * WidgetRTC
+
+Install the libraries through Arduino IDE Library Manager before compiling.
