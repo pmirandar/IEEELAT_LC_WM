@@ -23,3 +23,18 @@ proposed solution as a scalable, low-cost alternative for smart
 water monitoring in urban environments.
 
 <img width="1328" height="531" alt="v-abstract" src="https://github.com/user-attachments/assets/e9292bb0-5c3a-408a-9e19-3bb900858f4b" />
+
+## Overview
+
+This reposotiry contains the code, figures and explanations for the low-cost monitoring system of water level and flow in residential applications.
+
+The system provides:
+
+* Water level measurement in meters.
+* Tank filling percentage calculation.
+* Real-time flow rate monitoring in liters/min.
+* Accumulated water consumption tracking.
+* Remote monitoring through Blynk IoT.
+* Local visualization using a 20×4 LCD.
+* Automatic daily consumption reset.
+* Off-line operation when internet connectivity is unavailable.
