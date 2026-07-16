@@ -43,10 +43,10 @@ The system provides:
 
 Required Arduino libraries:
 
-    * Blynk
-    * BlynkEdgent
-    * LiquidCrystal_I2C
-    * TimeLib
-    * WidgetRTC
+   * Blynk
+   * BlynkEdgent
+   * LiquidCrystal_I2C
+   * TimeLib
+   * WidgetRTC
 
 Install the libraries through Arduino IDE Library Manager before compiling.
