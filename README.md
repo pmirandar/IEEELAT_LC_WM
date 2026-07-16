@@ -36,7 +36,6 @@ The system provides:
 * Accumulated water consumption tracking.
 * Remote monitoring through Blynk IoT.
 * Local visualization using a 20×4 LCD.
-* Automatic daily consumption reset.
 * Off-line operation when internet connectivity is unavailable.
 
 ## Software dependecies
