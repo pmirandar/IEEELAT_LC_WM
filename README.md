@@ -28,6 +28,14 @@ water monitoring in urban environments.
 
 This reposotiry contains the code, figures and explanations for the low-cost monitoring system of water level and flow in residential applications.
 
+Repository contents:
+
+*Code:* Algo por explicar..
+
+*Data:* Los archivos csv son muy grandes así que se incluyen los archivos de datos procesados para consumo diario, consumo acumulado y nivel de agua.
+
+*Figures_app:* Son las imágenes correspondientes a la app.
+
 The system provides:
 
 * Water level measurement in meters.
