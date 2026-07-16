@@ -39,9 +39,9 @@ The system provides:
 * Automatic daily consumption reset.
 * Off-line operation when internet connectivity is unavailable.
 
-  ## Software dependecies
+## Software dependecies
 
-  Required Arduino libraries:
+Required Arduino libraries:
 
     * Blynk
     * BlynkEdgent
