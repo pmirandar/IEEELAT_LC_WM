@@ -145,3 +145,5 @@ This architecture allows measurement tasks to continue operating even when netwo
 * TimeLib
 * WidgetRTC
 * Preferences
+
+  Install the libraries through Arduino IDE Library Manager before compiling.
