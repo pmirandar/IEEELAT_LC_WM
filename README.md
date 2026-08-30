@@ -30,30 +30,10 @@ This reposotiry contains the code, figures and explanations for the low-cost mon
 
 Repository contents:
 
-*Code:* Algo por explicar..
+*Code:* The firmware necessary to operate the electronics.
 
-*Data:* Los archivos csv son muy grandes así que se incluyen los archivos de datos procesados para consumo diario, consumo acumulado y nivel de agua.
+*Data:* Because the original data files are very large, we cannot publish them here; instead, we provide CSV files with the processed data —corresponding to daily consumption, cumulative consumption, and water levels for the three residences.
 
-*Figures_app:* Son las imágenes correspondientes a la app.
+*Figures_app:* Here are the screenshots of the mobile app.
 
-The system provides:
-
-* Water level measurement in meters.
-* Tank filling percentage calculation.
-* Real-time flow rate monitoring in liters/min.
-* Accumulated water consumption tracking.
-* Remote monitoring through Blynk IoT.
-* Local visualization using a 20×4 LCD.
-* Off-line operation when internet connectivity is unavailable.
-
-## Software dependecies
-
-Required Arduino libraries:
-
-   * Blynk
-   * BlynkEdgent
-   * LiquidCrystal_I2C
-   * TimeLib
-   * WidgetRTC
-
-Install the libraries through Arduino IDE Library Manager before compiling.
+*Diagram:* It includes the electronic diagram, which is useful for reproducing the hardware.
