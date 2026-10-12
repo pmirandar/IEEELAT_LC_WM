@@ -32,8 +32,4 @@ Repository contents:
 
 ***Code:*** The firmware necessary to operate the electronics.
 
-***Data:*** Because the original data files are very large, we cannot publish them here; instead, we provide CSV files with the processed data —corresponding to daily consumption, cumulative consumption, and water levels for the three residences.
-
-***Figures_app:*** Here are the screenshots of the mobile app.
-
 ***Diagram:*** It includes the electronic diagram, which is useful for reproducing the hardware.
