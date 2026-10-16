@@ -3,7 +3,6 @@
 #define BLYNK_FIRMWARE_VERSION "0.6.9"
 
 #define BLYNK_PRINT Serial
-// #define BLYNK_DEBUG
 #define APP_DEBUG
 
 #include "BlynkEdgent.h"
@@ -12,9 +11,9 @@
 #include <WidgetRTC.h>
 #include <Preferences.h>
 
-Preferences preferences; // objeto para leer/escribir en memoria no volátil
+Preferences preferences; // object for reading from/writing to non-volatile memory
 
-// --- Pines ---
+// Pines 
 #define boton 25
 #define pantalla 26
 #define FLOW_SENSOR_PIN 27
@@ -22,20 +21,20 @@ Preferences preferences; // objeto para leer/escribir en memoria no volátil
 #define aire 34
 #define agua 35
 
-// Variables globales para acumular los datos
+// Global variables for storing data
 volatile double Level_sum = 0;
 volatile double Vair_sum = 0;
 volatile double Vh2o_sum = 0;
 volatile int Level_count = 0;
 volatile double nivelOffset = 0;
-volatile bool resetRequest = false; // para manejar la acción de presionar el botón
+volatile bool resetRequest = false; // to handle the button press event
 
-// Reincio de la cuenta de los litros
+// Resetting the liter counter
 WidgetRTC rtc;
 
 int ultimoDiaReset = -1;
 
-// Nivel de agua
+// Water level
 volatile double Level;
 volatile int porcentaje;
 double total = 1.2;
@@ -46,7 +45,7 @@ double slope = 38.672;
 const float c = 0.982;
 const float b = 0.126;
 
-// Flujo
+// Flow
 volatile int flow_frequency;
 volatile int flow_frequency_2;
 volatile unsigned long pulsos = 0;
@@ -68,7 +67,7 @@ void IRAM_ATTR contarPulsos()
 
 void IRAM_ATTR botonReset()
 {
-  resetRequest = true; // simplemente indica que se pidió el reset
+  resetRequest = true; // It simply indicates that a reset was requested
 }
 
 // LCD
@@ -78,7 +77,7 @@ LiquidCrystal_I2C lcd(0x27, 20, 4);
 // Timer Blynk
 BlynkTimer timer;
 
-// --- Funciones Blynk ---
+// Blynk
 void myTimer()
 {
   double Level_avg = 0;
@@ -92,38 +91,36 @@ void myTimer()
     Vh2o_avg = Vh2o_sum / Level_count;
   }
 
-  // --- Redondeo ---
+  // Rounding 
   Level_avg = round(Level_avg * 100.0) / 100.0;
   Vair_avg = round(Vair_avg * 1000.0) / 1000.0;
   Vh2o_avg = round(Vh2o_avg * 1000.0) / 1000.0;
 
-  // Reset acumuladores
+  // Reset accumulators
   Level_sum = 0;
   Vair_sum = 0;
   Vh2o_sum = 0;
   Level_count = 0;
 
-  // Enviar nivel promedio
+  // Submit average level
   Blynk.virtualWrite(V0, Level_avg);
 
-  // Enviar porcentaje promedio
+  // Submit average percentage
   int porcentaje_avg = total > 0 ? round(Level_avg * 100.0 / total) : 0;
   Blynk.virtualWrite(V1, porcentaje_avg);
 
-  // Enviar voltajes promedio
+  // Submit average voltages
   Blynk.virtualWrite(V11, Vair_avg);
   Blynk.virtualWrite(V12, Vh2o_avg);
 
-  // -----------------------------
-  // RESET DIARIO DE LITROS
-  // -----------------------------
+  // DAILY RESET IN LITERS
   int hora = hour();
   int minuto = minute();
   int diaActual = day();
 
   if (hora == 0 && minuto == 0 && diaActual != ultimoDiaReset)
   {
-    Blynk.virtualWrite(V9, Liters); // opcional: guardar litros del día anterior
+    Blynk.virtualWrite(V9, Liters); // Optional: Save liters from the previous day
 
     Liters = 0;
     flow_frequency_2 = 0;
@@ -135,36 +132,36 @@ void myTimer()
 
 void sendFlowRealtime()
 {
-  bool hayFlujo = l_min > 0; // umbral anti ruido
+  bool hayFlujo = l_min > 0; // noise barrier
 
   if (hayFlujo)
   {
-    // mientras hay flujo, enviar siempre
+    // As long as there is flow, always send
     Blynk.virtualWrite(V5, l_min);
     Blynk.virtualWrite(V6, Liters);
     habiaFlujo = true;
   }
   else if (habiaFlujo)
   {
-    // solo una vez cuando pasa de flujo a cero
+    // Only once, when the flow drops to zero
     Blynk.virtualWrite(V5, 0);
     habiaFlujo = false;
   }
 }
 
-// --- BLYNK_WRITE ---
+// BLYNK_WRITE 
 BLYNK_WRITE(V3) { total = param.asDouble(); }
 BLYNK_WRITE(V4) { Vs = param.asDouble(); }
 BLYNK_WRITE(V8) { cte = param.asDouble(); }
 
-// --- Interrupción flujo ---
+// Flow interruption
 void flow()
 {
   flow_frequency++;
   flow_frequency_2++;
 }
 
-// --- Task de medición y LCD (núcleo 1) ---
+// Measurement Module and LCD (Core 1)
 void TaskMedicion(void *pvParameters)
 {
   double aux1, aux2;
@@ -172,7 +169,7 @@ void TaskMedicion(void *pvParameters)
 
   for (;;)
   {
-    // --- Lectura sensores ---
+    // Sensor Readings 
     aux1 = 0;
     aux2 = 0;
     for (int i = 0; i < n; i++)
@@ -190,14 +187,14 @@ void TaskMedicion(void *pvParameters)
     Vair = round(Vair * 1000.0) / 1000.0;
     Vh2o = round(Vh2o * 1000.0) / 1000.0;
 
-    // --- Cálculo nivel ---
+    // Level calculation
     if (resetRequest)
     {
-      nivelOffset = (Vh2o - Vair); // guardamos la diferencia actual
+      nivelOffset = (Vh2o - Vair); // We'll keep the current difference
       resetRequest = false;
       Serial.println("Nivel reseteado a cero, offset guardado: " + String(nivelOffset));
       preferences.begin("MedidorAgua", false);
-      preferences.putDouble("offset", nivelOffset); // guarda nivelOffset
+      preferences.putDouble("offset", nivelOffset); // nivelOffset save
       preferences.end();
     }
 
@@ -207,14 +204,14 @@ void TaskMedicion(void *pvParameters)
       Level = 0;
     porcentaje = Level * 100 / total;
 
-    // --- Acumular para promedio de 1 minuto ---
+    // Aggregate over an average of 1 minute
     Level_sum += Level;
     Vair_sum += Vair;
     Vh2o_sum += Vh2o;
     Level_count++;
 
-    // --- Cálculo flujo cada segundo ---
-    // Medición de flujo
+    // Calculating flow per second
+    // Flow Measurement
     currentTime = millis();
     // Every second, calculate and print litres/min
     if (currentTime >= (cloopTime + 1000))
@@ -229,7 +226,7 @@ void TaskMedicion(void *pvParameters)
       Liters = flow_frequency_2 / cte / 60 / 1.4 / m;
     }
 
-    // --- Actualización LCD ---
+    // LCD Update
     lcd.clear();
     lcd.setCursor(0, 0);
 
@@ -268,8 +265,8 @@ void setup()
   Serial.begin(115200);
 
   // Pines
-  pinMode(boton, INPUT_PULLDOWN);                                    // ya lo tienes
-  attachInterrupt(digitalPinToInterrupt(boton), botonReset, RISING); // o FALLING según conexión
+  pinMode(boton, INPUT_PULLDOWN);                                    
+  attachInterrupt(digitalPinToInterrupt(boton), botonReset, RISING); 
   pinMode(rst, INPUT_PULLUP);
   pinMode(pantalla, INPUT_PULLUP);
   pinMode(agua, INPUT_PULLDOWN);
@@ -290,13 +287,13 @@ void setup()
   // Blynk
   BlynkEdgent.begin();
 
-  // Task de medición + LCD en núcleo 1
+  // Measurement task + LCD on core 1
   xTaskCreatePinnedToCore(
       TaskMedicion, "MedicionLCD", 4096, NULL, 1, NULL, 1);
 
-  // Timers para Blynk
+  // Blynk timers  
   timer.setInterval(60000L, myTimer);
-  // Timer de 1 segundo para flujo en tiempo real
+  // 1-second timer for real-time flow
   timer.setInterval(1000L, sendFlowRealtime);
 
   lcd.clear();
@@ -304,10 +301,10 @@ void setup()
   lcd.print("Sistema listo");
 }
 
-// --- Blynk conectado ---
+// Blynk Connected
 BLYNK_CONNECTED()
 {
-  rtc.begin(); // sincroniza hora con internet
+  rtc.begin(); // synchronize the time with the Internet
 
   lcd.clear();
   lcd.setCursor(0, 0);
@@ -317,7 +314,7 @@ BLYNK_CONNECTED()
   delay(2000);
 }
 
-// --- Loop principal (núcleo 0) ---
+// Main loop (core 0)
 void loop()
 {
   BlynkEdgent.run();
