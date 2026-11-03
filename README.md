@@ -1,14 +1,22 @@
 
 # A Low-Cost IoT System Development for Real-Time Residential Water Monitoring
 
-***Manuscript  ID :***  11019
+
+**Journal:** IEEE Latin America Transactions
+
+**Manuscript  ID :**  11019
+
+**Authors:**
+- Andrea Monserrath Fernández-Saldaña
+- Alejandro Monroy-Avelino
+- Pedro Miranda-Romagnoli
+- Roberto Noriega-Papaqui
+
+**Affiliation:** Autonomous University of the State of Hidalgo, Pachuca, Mexico
+
+
 ---
 
-### <span style="font-size:10px"> Andrea M. Fernández-Saldaña, Alejandro Monroy-Avelino, Pedro Miranda-Romagnoli and Roberto Noriega-Papaqui
-
----
-
-**Affiliations: Universidad Autónoma del Estado de Hidalgo** [UAEH](https://www.uaeh.edu.mx/)
 
 Abstract— Water, as a natural resource, faces increasing pres-
 sure globally due to climate change, urbanization, and poor
