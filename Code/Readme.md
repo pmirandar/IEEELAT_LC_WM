@@ -98,8 +98,10 @@ Using the Blynk RTC service, the system automatically resets daily water consump
 
 Create your own Blynk Template and replace the placeholder values in the source code:
 
+```cpp
 #define BLYNK_TEMPLATE_ID "YOUR_TEMPLATE_ID"
 #define BLYNK_TEMPLATE_NAME "YOUR_TEMPLATE_NAME"
+```
 
 Configure the following virtual pins:
 
