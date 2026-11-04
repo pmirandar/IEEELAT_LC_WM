@@ -56,18 +56,20 @@ Repository contents:
 **Installation**
 *Dependecies:*
 
--BlynkEdgent
+- BlynkEdgent
 
 - LiquidCrystal_I2C
 
--TimeLib
+- TimeLib
 
--WidgtetRTC
+- WidgtetRTC
 
--Preferences
+- Preferences
 
 *Installation*
-The firs step is to install the libraries through Arduino IDE Library Manager before compiling. The second step is to compile the Monitor_WL_WC-v0.6.9.ino, located in the Code folder. The third step is to download the compiled file into the ESP32. 
+
+The firs step is to install the libraries through Arduino IDE Library Manager before compiling. The second step is to compile the Monitor_WL_WC-v0.6.9.ino, located in the Code folder. The third step is to download the compiled file into the ESP32.
+
 For a more detailed information, useful for reproduction, see the Readme.md in the Code folder.
 
 
