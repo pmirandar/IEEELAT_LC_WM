@@ -45,7 +45,7 @@ Repository contents:
 
 - Monitor_WL_WC-v0.6.9.ino
 
-The Code folder also includes the Blink configuration. The app interface was developed in the Blink platform, which is interactive and does not generate a code file.
+The Code folder also includes the Blink configuration. On the other hand, the app interface was developed in the Blink platform, which is interactive and does not generate a code file.
   
 ***Data:*** Because the original data files are very large, we cannot publish them here; instead, we provide CSV files with the processed data —corresponding to daily consumption, cumulative consumption, and water levels for the three residences.
 
