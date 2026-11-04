@@ -41,13 +41,36 @@ This reposotiry contains the code, figures and explanations for the low-cost mon
 
 Repository contents:
 
-***Code:*** The firmware necessary to operate the electronics.
+***Code:*** The firmware necessary to operate the electronics. It also contains a Readme.md with information about Hardware, System operation, Software architecture and Main required Libraries in order to facilitates reproduction.   
 
 ***Data:*** Because the original data files are very large, we cannot publish them here; instead, we provide CSV files with the processed data —corresponding to daily consumption, cumulative consumption, and water levels for the three residences.
 
+***Diagram:*** It includes the electronic diagram, which is useful for reproducing the hardware.
+
 ***Figures_app:*** Here are the screenshots of the mobile app.
 
-***Diagram:*** It includes the electronic diagram, which is useful for reproducing the hardware.
+
+
+---
+
+**Installation**
+*Dependecies:*
+
+-BlynkEdgent
+
+- LiquidCrystal_I2C
+
+-TimeLib
+
+-WidgtetRTC
+
+-Preferences
+
+*Installation*
+The firs step is to install the libraries through Arduino IDE Library Manager before compiling. The second step is to compile the Monitor_WL_WC-v0.6.9.ino, located in the Code folder. The third step is to download the compiled file into the ESP32. 
+For a more detailed information, useful for reproduction, see the Readme.md in the Code folder.
+
+
 
 
 
