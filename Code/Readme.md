@@ -94,8 +94,14 @@ Pressing the calibration button stores the current differential pressure value a
 Using the Blynk RTC service, the system automatically resets daily water consumption counters at midnight.
 
 ---
+## Blynk Configuration
 
-## Blynk Virtual Pins
+Create your own Blynk Template and replace the placeholder values in the source code:
+
+#define BLYNK_TEMPLATE_ID "YOUR_TEMPLATE_ID"
+#define BLYNK_TEMPLATE_NAME "YOUR_TEMPLATE_NAME"
+
+Configure the following virtual pins:
 
 | Virtual Pin | Function                         |
 | ----------- | -------------------------------- |
