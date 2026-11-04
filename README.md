@@ -37,12 +37,16 @@ water monitoring in urban environments.
 
 ## Overview
 
-This reposotiry contains the code, figures and explanations for the low-cost monitoring system of water level and flow in residential applications.
+This repository contains the code, figures and explanations for the low-cost monitoring system of water level and flow in residential applications.
 
 Repository contents:
 
-***Code:*** The firmware necessary to operate the electronics. It also contains a Readme.md with information about Hardware, System operation, Software architecture and Main required Libraries in order to facilitates reproduction.   
+***Code:*** The firmware necessary to operate the electronics. It also contains a Readme.md with information about Hardware, System operation, Software architecture and Main required Libraries in order to facilitates reproduction. The name of the developed code for the ESP32 is:
 
+- Monitor_WL_WC-v0.6.9.ino
+
+On the other hand, the interface app was developed in the Blink platform which is interactive and do not generate a code file. 
+  
 ***Data:*** Because the original data files are very large, we cannot publish them here; instead, we provide CSV files with the processed data —corresponding to daily consumption, cumulative consumption, and water levels for the three residences.
 
 ***Diagram:*** It includes the electronic diagram, which is useful for reproducing the hardware.
