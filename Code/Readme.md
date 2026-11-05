@@ -1,9 +1,12 @@
 | Code       | Description |
 |--- | --- |
-| ConnectionStatus.py | This script reads the events of connectivity for three houses and gather all the information in a single plot (Fig. 8).  |
 | Monitor_WL_WC-v0.6.9.ino | This is the firmware that allows the functionality of the hardware and is the most important piece of code in terms of reproduction of the system. |
+| water-level.gnu | This is the code that generates the water level graphs. It requires three input files named “System-N-   Water_Level_per_hour,” where N is the system number. These files are located in the “Data” folder. |
+| ConnectionStatus.py | This script reads the events of connectivity for three houses and gather all the information in a single plot. |
 
+# For the water level and consumption
 
+Gnuplot is required; each code file must be in the same working directory as the corresponding input files. 
 
 # ConnectionStatus.py 
 
