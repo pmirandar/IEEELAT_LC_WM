@@ -3,7 +3,7 @@
 | water-level.gnu | This is the code that generates the water level graphs. It requires three input files named “System-N-   Water_Level_per_hour”, where N is the system number. These files are located in the “Data” folder. (Fig. 7 (a))|
 | daily_consumption.gnu | This is the code that generates the water daily consumption graphs. It requires three input files named “System-N-Daily-Water_Consumtion”, where N is the system number. These files are located in the “Data” folder. (Fig. 7 (b))|
 | acummulated_consumption.gnu | This is the code that generates the water daily consumption graphs. It requires three input files named “System-N-Accumulated_Water_Consumption”, where N is the system number. These files are located in the “Data” folder. (Fig. 7 (c))|
-| ConnectionStatus.py | This script reads the events of connectivity for three houses and gather all the information in a single plot. (Fig. 8)|
+| ConnectionStatus.py | This script reads the events of connectivity for three houses and gather all the information in a single plot. The necessary data is located in the “Data_c” folder. (Fig. 8)|
 | Monitor_WL_WC-v0.6.9.ino | This is the firmware that allows the functionality of the hardware and is the most important piece of code in terms of reproduction of the system. |
 
 # For the water level and consumption
