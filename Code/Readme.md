@@ -12,7 +12,10 @@ To properly run this script, it is necessary to copy the Data_c folder into the 
 ```py
 base_path = r"/home/pedro/Data_c"
 ```
-So you need to modify this line to match your path.
+So you need to modify this line to match your path. The packages needed to run the corresponding Python code are: 
+
+- Pandas
+- Matplotlib
 
 # Monitor_WL_WC-v0.6.9.ino 
 
@@ -134,7 +137,7 @@ Configure the following virtual pins:
 
 A good source of information can be found in:
 
-[Blink Manual](https://docs.blynk.io/en?_gl=1*1ghz3uu*_ga*MTUzMTExNjAyMi4xNzg4OTA0NjA2*_ga_E376ZQ635Y*czE3OTM4MjQ3NzQkbzIkZzEkdDE3OTM4MjQ4MTUkajYwJGwwJGgw*_ga_J0GP1NPNB7*czE3OTM4MjQ3NzQkbzIkZzEkdDE3OTM4MjQ4MTUkajYwJGwwJGgw)
+[Blynk Manual](https://docs.blynk.io/en?_gl=1*1ghz3uu*_ga*MTUzMTExNjAyMi4xNzg4OTA0NjA2*_ga_E376ZQ635Y*czE3OTM4MjQ3NzQkbzIkZzEkdDE3OTM4MjQ4MTUkajYwJGwwJGgw*_ga_J0GP1NPNB7*czE3OTM4MjQ3NzQkbzIkZzEkdDE3OTM4MjQ4MTUkajYwJGwwJGgw)
 
 ---
 
