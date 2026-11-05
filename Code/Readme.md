@@ -7,8 +7,12 @@
 
 # ConnectionStatus.py explanations
 
-To properly run this script is necessary to have the folder Data
+To properly run this script, it is necessary to copy the Data_c folder into the working directory. The code defines a base directory:
 
+```py
+base_path = r"/home/pedro/Data_c"
+```
+So you need to modify this line to match your path.
 
 # Monitor_WL_WC-v0.6.9.ino explanations
 
