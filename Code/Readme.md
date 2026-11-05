@@ -118,6 +118,10 @@ Configure the following virtual pins:
 | V11         | Air pressure sensor voltage      |
 | V12         | Water pressure sensor voltage    |
 
+A good source of information can be found in:
+
+[Blink Manual](https://docs.blynk.io/en?_gl=1*1ghz3uu*_ga*MTUzMTExNjAyMi4xNzg4OTA0NjA2*_ga_E376ZQ635Y*czE3OTM4MjQ3NzQkbzIkZzEkdDE3OTM4MjQ4MTUkajYwJGwwJGgw*_ga_J0GP1NPNB7*czE3OTM4MjQ3NzQkbzIkZzEkdDE3OTM4MjQ4MTUkajYwJGwwJGgw)
+
 ---
 
 ## Software Architecture
