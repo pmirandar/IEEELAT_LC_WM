@@ -1,11 +1,11 @@
 | Code       | Description |
 |--- | --- |
-| Monitor_WL_WC-v0.6.9.ino | This is the firmware that allows the functionality of the hardware and is the most important piece of code in terms of reproduction of the system. |
 | ConnectionStatus.py | This script reads the events of connectivity for three houses and gather all the information in a single plot (Fig. 8).  |
+| Monitor_WL_WC-v0.6.9.ino | This is the firmware that allows the functionality of the hardware and is the most important piece of code in terms of reproduction of the system. |
 
-# Explanations of the codes
 
-# ConnectionStatus.py explanations
+
+# ConnectionStatus.py 
 
 To properly run this script, it is necessary to copy the Data_c folder into the working directory. The code defines a base directory:
 
@@ -14,7 +14,7 @@ base_path = r"/home/pedro/Data_c"
 ```
 So you need to modify this line to match your path.
 
-# Monitor_WL_WC-v0.6.9.ino explanations
+# Monitor_WL_WC-v0.6.9.ino 
 
 An ESP32-based IoT system designed for real-time monitoring of water tank level and water consumption. The device uses differential pressure sensors to estimate water level and a flow sensor to measure water usage. Data can be monitored locally through an LCD display or remotely through the Blynk platform.
 
