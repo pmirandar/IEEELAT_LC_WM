@@ -41,11 +41,7 @@ This repository contains the code, figures and explanations for the low-cost mon
 
 Repository contents:
 
-***Code:*** The firmware necessary to operate the electronics. It also contains a Readme.md with information about Hardware, System operation, Software architecture and Main required Libraries in order to facilitates reproduction. The name of the developed code for the ESP32 is:
-
-- Monitor_WL_WC-v0.6.9.ino
-
-The Code folder also includes the Blynk configuration. On the other hand, the app interface was developed in the Blynk platform, which is interactive and does not generate a code file.
+***Code:*** It includes a “Readme.md” file with detailed information about the firmware for the connection module and the scripts used to generate the results reported in the article. It also includes information about the interface (app), although the application was developed on the Blynk platform, which is interactive and does not generate a code file.
   
 ***Data:*** Because the original data files are very large, we cannot publish them here; instead, we provide CSV files with the processed data —corresponding to daily consumption, cumulative consumption, and water levels for the three residences.
 
