@@ -1,6 +1,16 @@
-# Water Level and Water Consumption Monitor
+| Code       | Description |
+|--- | --- |
+| Monitor_WL_WC-v0.6.9.ino | This is the firmware that allows the functionality of the hardware and is the most important piece of code in terms of reproduction of the system. |
+| ConnectionStatus.py | This script reads the events of connectivity for three houses and gather all the information in a single plot (Fig. 8).  |
 
-**Firmware Version:** 0.6.9
+# Explanations of the codes
+
+# ConnectionStatus.py explanations
+
+To properly run this script is necessary to have the folder Data
+
+
+# Monitor_WL_WC-v0.6.9.ino explanations
 
 An ESP32-based IoT system designed for real-time monitoring of water tank level and water consumption. The device uses differential pressure sensors to estimate water level and a flow sensor to measure water usage. Data can be monitored locally through an LCD display or remotely through the Blynk platform.
 
